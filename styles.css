@@ -1,0 +1,89 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(
+    17,
+    80px
+  ); /* Số lượng cột là 10 và mỗi cột có chiều rộng 80px */
+  justify-content: center;
+  gap: 10px; /* Khoảng cách giữa các card */
+}
+
+.card {
+  width: 80px;
+  height: 80px;
+  margin: 5px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Hiệu ứng khi hover */
+}
+
+.card.flipped {
+  background-color: transparent; /* Xóa màu nền */
+}
+
+.card:not(.flipped):hover {
+  transform: scale(1.1); /* Hiệu ứng phóng to khi hover */
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* CSS cho điện thoại */
+@media only screen and (max-width: 600px) {
+  .container {
+    margin: 50px auto;
+  }
+
+  .game-board {
+    grid-template-columns: repeat(4, 1fr); /* Hiển thị 4 cột */
+    gap: 5px; /* Khoảng cách giữa các thẻ */
+  }
+
+  .card {
+    width: 100%; /* Thẻ sẽ chiếm toàn bộ chiều rộng của cột */
+    height: 80px; /* Chiều cao của thẻ */
+    font-size: 20px;
+  }
+
+  h1 {
+    font-size: 24px; /* Kích thước của tiêu đề */
+    margin-bottom: 10px; /* Khoảng cách dưới tiêu đề */
+  }
+
+  #result {
+    font-size: 16px; /* Kích thước của kết quả */
+    margin-top: 10px; /* Khoảng cách trên kết quả */
+  }
+}
